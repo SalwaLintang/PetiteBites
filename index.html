@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PetiteBites | Bakery & Pastry</title>
+  <meta name="description" content="PetiteBites - Manis dalam setiap gigitan. Bakery & pastry rumahan dengan resep penuh cinta." />
+
+  <!-- Google Fonts: Fredoka (judul/bulat & ramah), Caveat (tulisan tangan/manis), Quicksand (teks biasa) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <svg style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="icon-croissant" viewBox="0 0 64 64">
+        <path d="M8 40 C8 20, 28 8, 44 12 C56 15, 60 28, 54 38 C48 48, 30 54, 16 50 C10 48, 8 44, 8 40 Z" fill="#E8B86D" stroke="#6B4423" stroke-width="2"/>
+        <path d="M20 22 L26 30 M30 18 L36 28 M40 18 L46 26" stroke="#6B4423" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </symbol>
+
+      <symbol id="icon-cupcake" viewBox="0 0 64 64">
+        <path d="M16 58 L22 38 L42 38 L48 58 Z" fill="#FFF3E6" stroke="#6B4423" stroke-width="2"/>
+        <path d="M22 44 L20 58 M32 44 L32 58 M42 44 L44 58" stroke="#E8B86D" stroke-width="2" stroke-linecap="round"/>
+        <path d="M20 38 C20 22, 44 22, 44 38 C44 30, 38 26, 32 26 C26 26, 20 30, 20 38 Z" fill="#F4A7BB" stroke="#6B4423" stroke-width="2"/>
+        <circle cx="32" cy="20" r="4" fill="#E8748F" stroke="#6B4423" stroke-width="1.5"/>
+      </symbol>
+
+      <symbol id="icon-cookie" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="22" fill="#D9A066" stroke="#6B4423" stroke-width="2"/>
+        <circle cx="24" cy="24" r="3" fill="#6B4423"/>
+        <circle cx="40" cy="22" r="3" fill="#6B4423"/>
+        <circle cx="42" cy="38" r="3" fill="#6B4423"/>
+        <circle cx="22" cy="40" r="3" fill="#6B4423"/>
+        <circle cx="32" cy="32" r="3" fill="#6B4423"/>
+      </symbol>
+
+      <symbol id="icon-donut" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="22" fill="#F4A7BB" stroke="#6B4423" stroke-width="2"/>
+        <circle cx="32" cy="32" r="9" fill="#FFF8F2" stroke="#6B4423" stroke-width="2"/>
+        <rect x="19" y="13" width="4" height="9" rx="2" fill="#E8B86D" transform="rotate(20 21 17)"/>
+        <rect x="40" y="14" width="4" height="9" rx="2" fill="#6B4423" transform="rotate(-15 42 18)"/>
+        <rect x="13" y="32" width="4" height="9" rx="2" fill="#FFFFFF" transform="rotate(80 15 36)"/>
+      </symbol>
+
+      <symbol id="icon-bread" viewBox="0 0 64 64">
+        <path d="M10 44 C10 28, 22 20, 32 20 C42 20, 54 28, 54 44 C54 50, 46 52, 32 52 C18 52, 10 50, 10 44 Z" fill="#E8B86D" stroke="#6B4423" stroke-width="2"/>
+        <path d="M20 26 L26 38 M30 22 L36 36 M40 24 L46 36" stroke="#6B4423" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+
+      <symbol id="icon-cake" viewBox="0 0 64 64">
+        <path d="M10 50 L32 14 L54 50 Z" fill="#FFF3E6" stroke="#6B4423" stroke-width="2"/>
+        <path d="M18 38 L46 38 M22 28 L42 28" stroke="#E8748F" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="32" cy="14" r="4" fill="#F4A7BB" stroke="#6B4423" stroke-width="1.5"/>
+      </symbol>
+
+      
+      <symbol id="icon-leaf" viewBox="0 0 64 64">
+        <path d="M12 52 C12 28, 32 12, 52 12 C52 32, 36 52, 12 52 Z" fill="#F4A7BB" stroke="#6B4423" stroke-width="2"/>
+        <path d="M16 48 C26 38, 36 28, 48 16" stroke="#6B4423" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="22" fill="#FFF3E6" stroke="#6B4423" stroke-width="2"/>
+        <path d="M32 20 L32 32 L42 38" stroke="#E8748F" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </symbol>
+      <symbol id="icon-box" viewBox="0 0 64 64">
+        <path d="M10 22 L32 12 L54 22 L32 32 Z" fill="#F4A7BB" stroke="#6B4423" stroke-width="2"/>
+        <path d="M10 22 L10 46 L32 56 L32 32 Z" fill="#FFF3E6" stroke="#6B4423" stroke-width="2"/>
+        <path d="M54 22 L54 46 L32 56 L32 32 Z" fill="#E8B86D" stroke="#6B4423" stroke-width="2"/>
+      </symbol>
+      <symbol id="icon-star" viewBox="0 0 64 64">
+        <path d="M32 8 L39 26 L58 26 L43 38 L48 56 L32 45 L16 56 L21 38 L6 26 L25 26 Z" fill="#E8B86D" stroke="#6B4423" stroke-width="1.5"/>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 64 64">
+        <path d="M32 54 C14 42 6 30 6 20 C6 10 14 6 21 6 C27 6 31 10 32 14 C33 10 37 6 43 6 C50 6 58 10 58 20 C58 30 50 42 32 54 Z" fill="#E8748F" stroke="#6B4423" stroke-width="2"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#beranda" class="navbar__logo">
+        <svg class="icon icon--logo"><use href="#icon-cupcake"/></svg>
+        PetiteBites
+      </a>
+
+      <nav class="navbar__menu" id="navMenu">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#menu">Menu</a>
+        <a href="#kenapa">Kenapa Kami</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kontak" class="navbar__cta">Pesan Sekarang</a>
+      </nav>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="beranda" class="hero">
+    <div class="hero__floaters" aria-hidden="true">
+      <svg class="floater floater--1"><use href="#icon-croissant"/></svg>
+      <svg class="floater floater--2"><use href="#icon-cookie"/></svg>
+      <svg class="floater floater--3"><use href="#icon-donut"/></svg>
+      <svg class="floater floater--4"><use href="#icon-cake"/></svg>
+    </div>
+
+    <div class="container hero__inner">
+      <p class="eyebrow">Bakery &amp; Pastry Rumahan</p>
+      <h1 class="hero__title">
+        Manis dalam <span class="script">Setiap Gigitan</span>
+      </h1>
+      <p class="hero__subtitle">
+        PetiteBites memanggang kue, roti, dan pastry segar setiap hari pakai resep rumahan,
+        bahan pilihan, dan sedikit keajaiban gula. Cocok buat nemenin ngeteh sore atau ngerayain hari spesial.
+      </p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--primary">Lihat Menu</a>
+        <a href="#kontak" class="btn btn--ghost">Pesan Sekarang</a>
+      </div>
+    </div>
+
+    <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C120,80 240,0 360,40 C480,80 600,0 720,40 C840,80 960,0 1080,40 C1200,80 1320,0 1440,40 L1440,80 L0,80 Z" fill="#FFE3E8"/>
+    </svg>
+  </section>
+
+  <!-- ===================== TENTANG KAMI ===================== -->
+  <section id="tentang" class="about">
+    <div class="container about__inner reveal">
+      <div class="about__text">
+        <p class="eyebrow">Cerita Kami</p>
+        <h2>Dari Dapur Kecil, Jadi Toko yang Disayang</h2>
+        <p>
+          PetiteBites dimulai dari dapur rumah dengan satu oven dan banyak rasa ingin tahu.
+          Berawal dari hobi membuat kue untuk keluarga, kini kami senang berbagi rasa itu lewat
+          setiap croissant renyah, cupcake lembut, dan cookies hangat yang keluar dari oven setiap pagi.
+        </p>
+        <p>
+          Kami percaya kue terbaik dibuat dengan bahan jujur, proses yang sabar, dan sedikit cinta
+          ekstra di setiap adonan. Itu yang bikin PetiteBites terasa seperti rumah.
+        </p>
+      </div>
+
+      <div class="about__stats">
+        <div class="stat-card">
+          <span class="stat-card__num">3+</span>
+          <span class="stat-card__label">Tahun Berkarya</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__num">50+</span>
+          <span class="stat-card__label">Varian Kue &amp; Roti</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__num">1000+</span>
+          <span class="stat-card__label">Pelanggan Senang</span>
+        </div>
+      </div>
+    </div>
+
+    <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C120,0 240,80 360,40 C480,0 600,80 720,40 C840,0 960,80 1080,40 C1200,0 1320,80 1440,40 L1440,80 L0,80 Z" fill="#FFF8F2"/>
+    </svg>
+  </section>
+
+  <!-- ===================== MENU / PRODUK ===================== -->
+  <section id="menu" class="products">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Menu Favorit</p>
+        <h2>Produk Unggulan PetiteBites</h2>
+        <p class="section-head__desc">Dipanggang fresh setiap hari, langsung dari etalase ke meja kamu.</p>
+      </div>
+
+      <div class="products__grid reveal">
+        <article class="product-card">
+          <div class="product-card__icon"><svg class="icon"><use href="#icon-croissant"/></svg></div>
+          <h3>Croissant Klasik</h3>
+          <p>Berlapis-lapis, renyah di luar, lembut di dalam. Favorit sejak hari pertama buka.</p>
+          <span class="price">Rp 15.000</span>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__icon"><svg class="icon"><use href="#icon-cupcake"/></svg></div>
+          <h3>Strawberry Cupcake</h3>
+          <p>Cupcake vanilla lembut dengan frosting strawberry yang manis pas, nggak berlebihan.</p>
+          <span class="price">Rp 12.000</span>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__icon"><svg class="icon"><use href="#icon-cookie"/></svg></div>
+          <h3>Cookies Cokelat</h3>
+          <p>Cookies tebal dengan choco chip melimpah, sedikit chewy di tengah.</p>
+          <span class="price">Rp 8.000</span>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__icon"><svg class="icon"><use href="#icon-donut"/></svg></div>
+          <h3>Donat Glaze</h3>
+          <p>Donat empuk dengan lapisan glaze manis dan taburan sprinkles warna-warni.</p>
+          <span class="price">Rp 10.000</span>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__icon"><svg class="icon"><use href="#icon-bread"/></svg></div>
+          <h3>Roti Sobek Coklat</h3>
+          <p>Roti sobek empuk dengan isian coklat melimpah di setiap sobekannya.</p>
+          <span class="price">Rp 25.000</span>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__icon"><svg class="icon"><use href="#icon-cake"/></svg></div>
+          <h3>Cake Slice Vanilla</h3>
+          <p>Potongan cake vanilla lembut berlapis cream, pas buat satu porsi cantik.</p>
+          <span class="price">Rp 18.000</span>
+        </article>
+      </div>
+    </div>
+
+    <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C120,80 240,0 360,40 C480,80 600,0 720,40 C840,80 960,0 1080,40 C1200,80 1320,0 1440,40 L1440,80 L0,80 Z" fill="#FFE3E8"/>
+    </svg>
+  </section>
+
+  <!-- ===================== KENAPA PILIH KAMI ===================== -->
+  <section id="kenapa" class="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Kenapa Pilih Kami</p>
+        <h2>Setiap Gigitan, Kami Jaga Kualitasnya</h2>
+      </div>
+
+      <div class="features__grid reveal">
+        <div class="feature-card">
+          <svg class="icon icon--feature"><use href="#icon-leaf"/></svg>
+          <h3>Bahan Premium</h3>
+          <p>Tepung, mentega, dan coklat pilihan untuk rasa yang konsisten enak.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="icon icon--feature"><use href="#icon-clock"/></svg>
+          <h3>Fresh Setiap Hari</h3>
+          <p>Dipanggang setiap pagi, tanpa stok bermalam. Selalu baru dari oven.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="icon icon--feature"><use href="#icon-box"/></svg>
+          <h3>Kemasan Cantik</h3>
+          <p>Dikemas rapi dan estetik, siap jadi hadiah atau dinikmati sendiri.</p>
+        </div>
+        <div class="feature-card">
+          <svg class="icon icon--feature"><use href="#icon-heart"/></svg>
+          <h3>Dibuat dengan Cinta</h3>
+          <p>Higienis, berkualitas, dan tetap dibuat dengan sentuhan rumahan.</p>
+        </div>
+      </div>
+    </div>
+
+    <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C120,0 240,80 360,40 C480,0 600,80 720,40 C840,0 960,80 1080,40 C1200,0 1320,80 1440,40 L1440,80 L0,80 Z" fill="#FFF8F2"/>
+    </svg>
+  </section>
+
+  <!-- ===================== TESTIMONI ===================== -->
+  <section id="testimoni" class="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Kata Mereka</p>
+        <h2>Cerita dari Pelanggan PetiteBites</h2>
+      </div>
+
+      <div class="testimonials__grid reveal">
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars">
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+          </div>
+          <p>"Croissant-nya juara, selapis-lapisnya kerasa. Sekarang langganan tiap weekend!"</p>
+          <span class="testimonial-card__name">— Priyagung.</span>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars">
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+          </div>
+          <p>"Pesan cupcake buat ulang tahun anak, rasanya manis pas dan kemasannya lucu banget."</p>
+          <span class="testimonial-card__name">— Jaehyun.</span>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-card__stars">
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+            <svg class="icon icon--star"><use href="#icon-star"/></svg>
+          </div>
+          <p>"Roti sobek coklatnya selalu sold out duluan kalau kesiangan beli. Wajib coba!"</p>
+          <span class="testimonial-card__name">— Jeonghan.</span>
+        </article>
+      </div>
+    </div>
+
+    <svg class="divider" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 C120,80 240,0 360,40 C480,80 600,0 720,40 C840,80 960,0 1080,40 C1200,80 1320,0 1440,40 L1440,80 L0,80 Z" fill="#FFE3E8"/>
+    </svg>
+  </section>
+
+  <!-- ===================== KONTAK ===================== -->
+  <section id="kontak" class="contact">
+    <div class="container contact__inner">
+      <div class="contact__info reveal">
+        <p class="eyebrow">Kunjungi / Hubungi Kami</p>
+        <h2>Yuk, Pesan Kue Favoritmu</h2>
+        <ul class="contact__list">
+          <li><strong>Alamat:</strong> Jl. Telekomunikasi No. 1, Bandung</li>
+          <li><strong>Jam Buka:</strong> Setiap hari, 08.00 – 21.00 WIB</li>
+          <li><strong>WhatsApp:</strong> 0812-3456-7890</li>
+          <li><strong>Instagram:</strong> @petitebites.id</li>
+        </ul>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm">
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="name" placeholder="Nama kamu" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@kamu.com" required />
+
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" rows="4" placeholder="Mau pesan kue apa hari ini?" required></textarea>
+
+        <button type="submit" class="btn btn--primary">Kirim Pesan</button>
+        <p class="contact__form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg class="icon icon--logo"><use href="#icon-cupcake"/></svg>
+        PetiteBites
+      </div>
+      <p class="footer__tagline">Manis dalam setiap gigitan.</p>
+
+      <p class="footer__credit">
+        Website ini dibuat untuk Tugas Besar Komputasi Awan &mdash;
+        <em>Implementasi Containerisasi Website Company Profile Menggunakan Docker</em>
+      </p>
+      <p class="footer__team">
+        Putri Fatimah Azzahra (101032400016) ·
+        Radiah (101032400114) ·
+        Salwa Lintang Ayu (101032400162)
+      </p>
+
+      <p class="footer__copy">&copy; 2026 PetiteBites. Semua hak dipanggang dengan cinta.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

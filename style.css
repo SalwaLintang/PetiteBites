@@ -1,0 +1,413 @@
+/* ---------- 1. DESIGN TOKENS (variabel warna & lainnya) ---------- */
+:root {
+  --cream: #FFF8F2;       /* latar utama, warna krim vanilla */
+  --cream-soft: #FFF3E6;  /* krim sedikit lebih gelap, untuk kartu */
+  --blush: #FFE3E8;       /* pink muda, latar belakang section selang-seling */
+  --pink: #F4A7BB;        /* pink frosting, warna aksen utama */
+  --pink-deep: #E8748F;   /* pink strawberry, untuk tombol & hover */
+  --gold: #E8B86D;        /* emas karamel, aksen kedua */
+  --cocoa: #6B4423;       /* coklat kakao, warna teks utama */
+  --cocoa-soft: #8C5A35;  /* coklat lebih muda, teks sekunder */
+  --white: #FFFFFF;
+
+  --font-display: 'Fredoka', sans-serif;  /* judul, bulat & ramah */
+  --font-script: 'Caveat', cursive;       /* aksen tulisan tangan */
+  --font-body: 'Quicksand', sans-serif;   /* teks biasa */
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --shadow-soft: 0 10px 30px rgba(107, 68, 35, 0.12);
+}
+
+/* ---------- 2. RESET DASAR ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--cocoa);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0 0 .5em 0;
+  line-height: 1.2;
+}
+p { margin: 0 0 1em 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; }
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.script { font-family: var(--font-script); color: var(--pink-deep); }
+
+.eyebrow {
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--pink-deep);
+  background: var(--blush);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  font-size: .9rem;
+}
+
+/* ikon umum */
+.icon { width: 28px; height: 28px; }
+.icon--logo { width: 30px; height: 30px; }
+.icon--feature { width: 44px; height: 44px; margin-bottom: 12px; }
+.icon--star { width: 20px; height: 20px; }
+
+/* ---------- 3. TOMBOL ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn--primary {
+  background: var(--pink-deep);
+  color: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+.btn--primary:hover { transform: translateY(-3px); box-shadow: 0 14px 26px rgba(232,116,143,.35); }
+.btn--ghost {
+  background: transparent;
+  border-color: var(--pink-deep);
+  color: var(--pink-deep);
+}
+.btn--ghost:hover { background: var(--blush); }
+
+/* ---------- 4. NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 248, 242, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(107,68,35,0.06);
+}
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--pink-deep);
+}
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 600;
+}
+.navbar__menu a { padding: 6px 2px; position: relative; }
+.navbar__menu a:not(.navbar__cta)::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--pink-deep);
+  transition: width .2s ease;
+}
+.navbar__menu a:not(.navbar__cta):hover::after { width: 100%; }
+.navbar__cta {
+  background: var(--pink-deep);
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: 999px;
+}
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+}
+.navbar__toggle span {
+  width: 24px; height: 3px;
+  background: var(--cocoa);
+  border-radius: 2px;
+}
+
+/* ---------- 5. HERO ---------- */
+.hero {
+  position: relative;
+  padding: 90px 0 0;
+  overflow: hidden;
+  text-align: center;
+}
+.hero__inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; padding-bottom: 60px;}
+.hero__title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--cocoa);
+}
+.hero__title .script { font-size: 1.15em; }
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--cocoa-soft);
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+.hero__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+.hero__floaters { position: absolute; inset: 0; z-index: 1; }
+.floater { position: absolute; width: 64px; height: 64px; opacity: .85; animation: float 6s ease-in-out infinite; }
+.floater--1 { top: 14%; left: 8%; animation-delay: 0s; }
+.floater--2 { top: 22%; right: 10%; width: 50px; height: 50px; animation-delay: 1s; }
+.floater--3 { bottom: 18%; left: 14%; width: 46px; height: 46px; animation-delay: 2s; }
+.floater--4 { bottom: 12%; right: 8%; width: 56px; height: 56px; animation-delay: .5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(6deg); }
+}
+
+/* pembatas section bergaya "tetesan icing" */
+.divider { width: 100%; height: 70px; display: block; margin-bottom: -2px; }
+
+/* ---------- 6. TENTANG KAMI ---------- */
+.about { background: var(--blush); padding: 70px 0 0; }
+.about__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: center;
+  padding-bottom: 60px;
+}
+.about__text h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.about__text p { color: var(--cocoa-soft); }
+
+.about__stats { display: grid; gap: 16px; }
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.stat-card__num { font-family: var(--font-display); font-size: 1.8rem; color: var(--pink-deep); }
+.stat-card__label { color: var(--cocoa-soft); font-weight: 600; }
+
+/* ---------- 7. SECTION HEAD (judul tengah, dipakai berulang) ---------- */
+.section-head { text-align: center; max-width: 600px; margin: 0 auto 50px; }
+.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.section-head__desc { color: var(--cocoa-soft); }
+
+/* ---------- 8. PRODUK / MENU ---------- */
+.products { background: var(--cream); padding: 70px 0 0; }
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding-bottom: 60px;
+}
+.product-card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 34px 24px 26px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 34px rgba(107,68,35,0.16); }
+
+/* efek tepi bergerigi seperti cup cupcake / pinggiran pie, ciri khas desain ini */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: 0; right: 0; height: 20px;
+  background-image: radial-gradient(circle at 10px 10px, var(--blush) 10px, transparent 11px);
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.product-card__icon {
+  width: 70px; height: 70px;
+  margin: 0 auto 14px;
+  background: var(--blush);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.product-card__icon .icon { width: 38px; height: 38px; }
+.product-card h3 { font-size: 1.15rem; }
+.product-card p { color: var(--cocoa-soft); font-size: .92rem; min-height: 64px; }
+.price {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--pink-deep);
+  background: var(--blush);
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+/* ---------- 9. KENAPA PILIH KAMI ---------- */
+.features { background: var(--blush); padding: 70px 0 0; }
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-bottom: 60px;
+}
+.feature-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+.feature-card h3 { font-size: 1.05rem; }
+.feature-card p { color: var(--cocoa-soft); font-size: .9rem; margin: 0; }
+
+/* ---------- 10. TESTIMONI ---------- */
+.testimonials { background: var(--cream); padding: 70px 0 0; }
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 60px;
+}
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-soft);
+}
+.testimonial-card__stars { display: flex; gap: 4px; margin-bottom: 12px; }
+.testimonial-card p { font-style: italic; color: var(--cocoa-soft); }
+.testimonial-card__name { font-weight: 700; color: var(--pink-deep); }
+
+/* ---------- 11. KONTAK ---------- */
+.contact { background: var(--blush); padding: 80px 0; }
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+.contact__info h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.contact__list li { margin-bottom: 10px; color: var(--cocoa-soft); }
+.contact__list strong { color: var(--cocoa); }
+
+.contact__form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.contact__form label { font-weight: 700; font-size: .9rem; margin-top: 8px; }
+.contact__form input, .contact__form textarea {
+  font-family: var(--font-body);
+  border: 2px solid var(--blush);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: .95rem;
+  background: var(--cream);
+  color: var(--cocoa);
+  resize: vertical;
+}
+.contact__form input:focus, .contact__form textarea:focus {
+  outline: none;
+  border-color: var(--pink-deep);
+}
+.contact__form button { margin-top: 16px; }
+.contact__form-note { font-weight: 600; color: var(--pink-deep); min-height: 1.2em; margin: 10px 0 0; }
+
+/* ---------- 12. FOOTER ---------- */
+.footer { background: var(--cocoa); color: var(--cream); padding: 50px 0 30px; text-align: center; }
+.footer__brand {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--pink);
+}
+.footer__tagline { font-family: var(--font-script); font-size: 1.3rem; color: var(--gold); margin-top: 4px; }
+.footer__credit { font-size: .85rem; color: #E9D9C8; max-width: 560px; margin: 24px auto 4px; }
+.footer__team { font-size: .85rem; color: #E9D9C8; margin-bottom: 16px; }
+.footer__copy { font-size: .8rem; color: #C9AE93; }
+
+/* ---------- 13. BACK TO TOP ---------- */
+.back-to-top {
+  position: fixed;
+  right: 22px; bottom: 22px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pink-deep);
+  color: var(--white);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 60;
+}
+.back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* ---------- 14. SCROLL REVEAL (animasi muncul saat di-scroll) ---------- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* hormati preferensi "reduced motion" pengguna */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .floater, .product-card, .btn { transition: none; animation: none; }
+}
+
+/* ---------- 15. RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .about__inner { grid-template-columns: 1fr; }
+  .products__grid { grid-template-columns: repeat(2, 1fr); }
+  .features__grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .contact__inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .navbar__menu {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 24px 24px;
+    gap: 14px;
+    box-shadow: var(--shadow-soft);
+    display: none;
+  }
+  .navbar__menu.is-open { display: flex; }
+  .navbar__cta { text-align: center; }
+  .navbar__toggle { display: flex; }
+  .products__grid { grid-template-columns: 1fr; }
+  .features__grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 70px; }
+}
